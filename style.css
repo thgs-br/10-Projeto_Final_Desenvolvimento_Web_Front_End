@@ -1,0 +1,322 @@
+/* ===============================
+   1. VARIÁVEIS CSS (DESAFIO EXTRA)
+   =============================== */
+:root {
+    /* Cores Principais - Azul Metálico */
+    --cor-primaria: #007bff;        /* Azul Principal (Botões) */
+    --cor-secundaria: #0056b3;     /* Azul Escuro (Hover) */
+    
+    /* Cores Neutras - Toque Metálico/Tecnológico */
+    --cor-fundo: #f8f8f8;          /* Fundo Bege/Creme (como na imagem) */
+    --cor-texto: #333;             /* Texto Escuro */
+    --cor-card-fundo: #fff;        /* Fundo dos Cards */
+    --cor-detalhe-claro: #ddd;     /* Linhas de separação, bordas */
+    
+    /* Tipografia */
+    --fonte-principal: 'Arial', sans-serif;
+    
+    /* Espaçamento */
+    --espacamento-secao: 60px;
+    --largura-maxima: 1000px;
+}
+
+
+/* ===============================
+   2. RESET BÁSICO E ESTILOS GERAIS
+   =============================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho total do elemento */
+}
+
+body {
+    font-family: var(--fonte-principal);
+    line-height: 1.6;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo); /* Fundo sutil */
+}
+
+/* Centraliza e limita a largura do conteúdo principal */
+.container {
+    width: 90%;
+    max-width: var(--largura-maxima);
+    margin: 0 auto; /* Centraliza o bloco */
+    padding: 0 15px; /* Evita que o conteúdo cole nas laterais em telas menores */
+}
+
+/* Estilo para títulos de seção */
+h2 {
+    text-align: center;
+    font-size: 2em;
+    margin: 40px 0 20px;
+    text-transform: uppercase;
+}
+/* ===============================
+   3. CABEÇALHO (HEADER)
+   =============================== */
+.main-header {
+    background-color: var(--cor-card-fundo); /* Fundo branco/claro */
+    border-bottom: 1px solid var(--cor-detalhe-claro);
+    padding: 15px 0;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between; /* Espaça os elementos (logo, nav, busca) */
+    align-items: center; /* Alinha verticalmente no centro */
+}
+
+.logo {
+    font-size: 1.8em;
+    color: var(--cor-primaria); /* Logo em azul metálico */
+    margin: 0;
+}
+
+/* Menu de Navegação */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    padding: 10px 15px;
+    display: block;
+    transition: color 0.3s; /* Transição suave para o hover */
+}
+
+.main-nav ul li a:hover {
+    color: var(--cor-primaria); /* Efeito hover em azul */
+}
+
+/* Campo de Busca */
+.search-bar input {
+    padding: 8px;
+    border: 1px solid var(--cor-detalhe-claro);
+    border-radius: 4px 0 0 4px; /* Borda arredondada só na esquerda */
+    outline: none;
+}
+
+.search-bar button {
+    padding: 8px 15px;
+    background-color: var(--cor-primaria);
+    color: white;
+    border: 1px solid var(--cor-primaria);
+    border-radius: 0 4px 4px 0; /* Borda arredondada só na direita */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: var(--cor-secundaria); /* Efeito hover mais escuro */
+}
+
+/* ===============================
+   4. ESTILO PADRÃO DE BOTÕES
+   =============================== */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s, transform 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+/* Botão Primário (Azul Metálico) */
+.primary-btn {
+    background-color: var(--cor-primaria);
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: var(--cor-secundaria);
+    transform: translateY(-2px); /* Efeito de elevação sutil (Desafio Extra: Transição!) */
+}
+
+/* ===============================
+   5. SEÇÃO BANNER (DESTAQUE)
+   =============================== */
+.banner {
+    /* Substitua 'banner-tech.jpg' pelo nome do seu arquivo de imagem */
+    background: url('Imagens/faixa_loja.jpg') no-repeat center center/cover;
+    height: 400px; /* Altura do Banner */
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--espacamento-secao);
+}
+
+/* =====================================
+   6. SEÇÃO PRODUTOS EM DESTAQUE
+   ===================================== */
+.destaques {
+    padding-bottom: var(--espacamento-secao);
+}
+
+.produtos-grid {
+    display: flex;
+    justify-content: space-between; /* Distribui os cards horizontalmente */
+    gap: 20px; /* Espaço entre os cards */
+    flex-wrap: wrap; /* Permite que os cards quebrem a linha se a tela for muito pequena */
+}
+
+.produto-card {
+    background-color: var(--cor-card-fundo);
+    border: 1px solid var(--cor-detalhe-claro);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    flex: 1 1 200px; /* Faz os cards terem uma largura mínima de 200px e crescerem/encolherem */
+    max-width: 23%; /* Garante que caibam 4 por linha (Desafio: Transição no hover!) */
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+/* Desafio Extra: Efeito de transição nos cards de produtos */
+.produto-card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra para elevar o card */
+    transform: translateY(-5px); /* Move o card levemente para cima */
+}
+
+.produto-card .produto-img {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.produto-card h3 {
+    font-size: 1.1em;
+    margin: 10px 0 5px;
+    color: var(--cor-primaria);
+}
+
+.produto-card .preco {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--cor-texto);
+    margin-bottom: 15px;
+}
+
+.produto-card .add-carrinho {
+    width: 100%;
+    padding: 8px 0;
+    font-size: 0.9em;
+}
+
+/* ===============================
+   7. SEÇÃO SOBRE A LOJA
+   =============================== */
+.sobre-loja {
+    background-color: #f0ede5; /* Fundo levemente creme/bege, como na imagem */
+    padding: var(--espacamento-secao) 0;
+    margin-bottom: var(--espacamento-secao);
+}
+
+.sobre-loja h2 {
+    margin-top: 0;
+}
+
+.sobre-content {
+    display: flex;
+    align-items: center; /* Alinha o texto e a imagem verticalmente */
+    gap: 40px;
+}
+
+.sobre-texto {
+    flex: 1; /* O texto ocupa 50% do espaço */
+    padding-right: 20px;
+}
+
+.sobre-imagem {
+    flex: 1; /* A imagem ocupa 50% do espaço */
+    text-align: right;
+}
+
+.sobre-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ===============================
+   8. SEÇÃO CONTATO (FORMULÁRIO)
+   =============================== */
+.contato {
+    padding-bottom: var(--espacamento-secao);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid var(--cor-detalhe-claro);
+    border-radius: 4px;
+    font-family: var(--fonte-principal);
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--cor-primaria); /* Borda azul ao focar */
+}
+
+/* Campos Nome e E-mail lado a lado */
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row input {
+    flex: 1; /* Faz cada input ocupar 50% da linha */
+}
+
+.contact-form textarea {
+    resize: vertical; /* Permite redimensionar apenas verticalmente */
+}
+
+.btn-enviar {
+    display: block;
+    margin: 20px auto 0; /* Centraliza o botão de envio */
+    width: 300px; /* Largura definida para centralizar melhor */
+    text-align: center;
+}
+
+/* ===============================
+   9. RODAPÉ (FOOTER)
+   =============================== */
+.main-footer {
+    background-color: #222; /* Fundo escuro para dar contraste e um toque tecnológico */
+    color: var(--cor-detalhe-claro);
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.main-footer .footer-links a {
+    color: var(--cor-detalhe-claro);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.main-footer .footer-links a:hover {
+    color: var(--cor-primaria); /* Links de redes sociais em azul metálico */
+}
+
+.main-footer .copyright {
+    margin-top: 15px;
+    line-height: 1.4;
+}
+

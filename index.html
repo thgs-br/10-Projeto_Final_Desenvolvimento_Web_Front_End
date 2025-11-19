@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore | Eletrônicos Modernos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <h1 class="logo">TechStore</h1>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+
+            <form class="search-bar" action="#produtos">
+                <input type="text" placeholder="Buscar">
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+    </header>
+
+    <main>
+        
+        <section id="inicio" class="banner">
+            <div class="banner-content">
+                <h1>SUPER OFERTAS DE OUTONO!</h1>
+                <p>Aproveite as promoções exclusivas da temporada</p>
+                <a href="#produtos" class="btn primary-btn">COMPRE AGORA</a>
+            </div>
+        </section>
+
+        <section id="produtos" class="destaques container">
+            <h2>PRODUTOS EM DESTAQUE</h2>
+            
+            <div class="produtos-grid">
+                <article class="produto-card">
+                    <img src="Imagens/Smartphone.jpeg" alt="Smartphone" class="produto-img">
+                    <h3>Smartphone</h3>
+                    <p class="preco">R$ 1.299,00</p>
+                    <button class="btn add-carrinho">ADICIONAR AO CARRINHO</button>
+                </article>
+                
+                <article class="produto-card">
+                    <img src="Imagens/Notebook.jpeg" alt="Notebook" class="produto-img">
+                    <h3>Notebook</h3>
+                    <p class="preco">R$ 2.499,00</p>
+                    <button class="btn add-carrinho">ADICIONAR AO CARRINHO</button>
+                </article>
+                
+                <article class="produto-card">
+                    <img src="Imagens/Fone de Ouvido.jpeg" alt="Fone de Ouvido" class="produto-img">
+                    <h3>Fone de Ouvido</h3>
+                    <p class="preco">R$ 199,00</p>
+                    <button class="btn add-carrinho">ADICIONAR AO CARRINHO</button>
+                </article>
+                
+                <article class="produto-card">
+                    <img src="Imagens/Smartwatch.jpeg" alt="Smartwatch" class="produto-img">
+                    <h3>Smartwatch</h3>
+                    <p class="preco">R$ 499,00</p>
+                    <button class="btn add-carrinho">ADICIONAR AO CARRINHO</button>
+                </article>
+            </div>
+        </section>
+
+        <section id="sobre" class="sobre-loja container">
+            <h2>SOBRE A LOJA</h2>
+            <div class="sobre-content">
+                <div class="sobre-texto">
+                    <p>Bem-vindo à TechStore! Somos uma loja especializada em eletrônicos e acessórios de alta qualidade. Nosso compromisso é oferecer os melhores produtos com a garantia de excelência e inovação.</p>
+                    <p>Acreditamos que a tecnologia deve ser acessível e simples, por isso selecionamos cuidadosamente cada item do nosso catálogo para garantir a sua satisfação.</p>
+                </div>
+                <div class="sobre-imagem">
+                    <img src="Imagens/equipe.jpeg" alt="Equipe TechStore" class="sobre-img">
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="contato container">
+            <h2>CONTATO</h2>
+            <form action="#" method="POST" class="contact-form">
+                
+                <div class="form-row">
+                    <input type="text" id="nome" name="nome" placeholder="Nome completo" required>
+                    <input type="email" id="email" name="email" placeholder="E-mail" required>
+                </div>
+                
+                <textarea id="mensagem" name="mensagem" placeholder="Mensagem" rows="5" required></textarea>
+                
+                <button type="submit" class="btn primary-btn btn-enviar">Enviar mensagem</button>
+            </form>
+        </section>
+    
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">LinkedIn</a>
+            </div>
+            <p class="copyright">
+                TechStore Comércio de Eletrônicos Ltda. | CNPJ: 12.345.678/9999-90
+            </p>
+            <p class="copyright">
+                &copy; 2025 TechStore – Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
